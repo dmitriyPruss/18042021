@@ -1,0 +1,68 @@
+p::first-letter{
+    font-size: 3em;
+    color: red
+}
+p::selection{
+    background-color: brown;
+    color: burlywood;
+}
+
+/* It works only in Mozilla */
+p::selection::first-letter{
+    background-color: brown;
+    color: burlywood;
+}
+p::first-line{
+    background-color: chartreuse;
+}
+
+/* li:hover::before{
+    content: 'Next element: <<';
+}
+
+li:hover::after{
+    content: ">>";
+    color: blue;
+} */
+
+li{
+    display: inline-block;
+    min-width: 100px;
+    width: 100%;
+    max-width: 150px;
+    background-color: cadetblue;
+    margin: 5px;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+li:hover::before, li:hover::after{
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    left: 0;
+    content: '';
+}
+
+li:hover::before{
+    /* border: 2px solid green;
+     */
+    background: linear-gradient(to left, #e3004f, #f55228, #f08a00, #d7bd00, #a8eb12);
+    /* top: 0px; */
+    bottom: calc(100% + 2px);
+    width: 100%;
+    transition: width 2s;
+}
+li:hover::after{
+    background: linear-gradient(to right, #e3004f, #f55228, #f08a00, #d7bd00, #a8eb12);
+    /* top: 0px; */
+    top: calc(100% + 2px);
+    width: 100%;
+    transition: width 2s;
+}
+li:hover{
+    color: red;
+    padding: 20px 40px;
+    transition: color 2s;
+}
