@@ -15,7 +15,7 @@
 
 .gridContainer > div{
     /* border: 2px solid green; */
-    background: linear-gradient(to top, white, black);
+    background: linear-gradient(to top, white, grey);
     padding: 20px;
     /* width: 150px;
     height: 150px; */
