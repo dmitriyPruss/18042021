@@ -1,29 +1,20 @@
-p::first-letter{
+/* p::first-letter{
     font-size: 3em;
     color: red
 }
 p::selection{
     background-color: brown;
     color: burlywood;
-}
+} */
 
 /* It works only in Mozilla */
-p::selection::first-letter{
+/* p::selection::first-letter{
     background-color: brown;
     color: burlywood;
 }
 p::first-line{
     background-color: chartreuse;
 }
-
-/* li:hover::before{
-    content: 'Next element: <<';
-}
-
-li:hover::after{
-    content: ">>";
-    color: blue;
-} */
 
 li{
     display: inline-block;
@@ -37,32 +28,63 @@ li{
     position: relative;
 }
 
-li:hover::before, li:hover::after{
+li:before, li:after{
     position: absolute;
     height: 4px;
-    width: 0%;
+    width: 0;
     left: 0;
     content: '';
 }
 
 li:hover::before{
-    /* border: 2px solid green;
-     */
     background: linear-gradient(to left, #e3004f, #f55228, #f08a00, #d7bd00, #a8eb12);
-    /* top: 0px; */
     bottom: calc(100% + 2px);
     width: 100%;
     transition: width 2s;
 }
+
+
 li:hover::after{
     background: linear-gradient(to right, #e3004f, #f55228, #f08a00, #d7bd00, #a8eb12);
-    /* top: 0px; */
     top: calc(100% + 2px);
     width: 100%;
     transition: width 2s;
 }
 li:hover{
     color: red;
-    padding: 20px 40px;
     transition: color 2s;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.gridContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 100px 3fr 1fr;
+    grid-auto-rows: 300px;
+    grid-auto-columns: 50px;
+    grid-auto-flow: column;
+}
+
+.gridContainer > div{
+    border: 2px solid green;
+    background-color: coral;
+    /* width: 150px;
+    height: 150px; */
+}
+
+.gridChild1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.gridChild2{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+

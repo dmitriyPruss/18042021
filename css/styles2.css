@@ -1,0 +1,48 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gridContainer{
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 100vh 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gridContainer > div{
+    /* border: 2px solid green; */
+    background: linear-gradient(to top, white, black);
+    padding: 20px;
+    /* width: 150px;
+    height: 150px; */
+}
+
+.gridContainer > *:nth-child(even){
+    background: linear-gradient(to right, maroon, red, white)
+}
+
+.gridChild1, .gridChild2, .gridChild3{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.gridContainer > .gridChild1{
+    background-image: url(./../imgs/beach.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gridChild1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gridChild1> *:last-child{
+    border: 1px solid red;
+    border-radius: 5px;;
+}
+
